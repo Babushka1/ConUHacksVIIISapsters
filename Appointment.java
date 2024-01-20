@@ -12,11 +12,11 @@ public class Appointment{
 
     public Date Conversion(String apptRequestDate){
 
-        int year = Integer.parseInt(apptRequestDate.substring(1, 5));
-        int month = Integer.parseInt(apptRequestDate.substring(6, 8));
-        int day = Integer.parseInt(apptRequestDate.substring(9, 11));
-        int hour = Integer.parseInt(apptRequestDate.substring(12, 14));
-        int min = Integer.parseInt(apptRequestDate.substring(15));
+         int year = Integer.parseInt(apptRequestDate.substring(0, 4));
+        int month = Integer.parseInt(apptRequestDate.substring(5, 7));
+        int day = Integer.parseInt(apptRequestDate.substring(8, 10));
+        int hour = Integer.parseInt(apptRequestDate.substring(11, 13));
+        int min = Integer.parseInt(apptRequestDate.substring(14));
 
         Calendar calendar = Calendar.getInstance();
 
