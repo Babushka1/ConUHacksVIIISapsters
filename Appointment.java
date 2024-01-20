@@ -29,23 +29,23 @@ public class Appointment{
 
        	public int carType(String car)
    	{
-   		if (car.equals(" compact"))
+   		if (car.equals("compact"))
    		{
    			return 0;
    		}
-   		else if (car.equals(" medium"))
+   		else if (car.equals("medium"))
    		{
    			return 1;
    		}
-   		else if (car.equals(" full-size"))
+   		else if (car.equals("full-size"))
    		{
    			return 2;
    		}
-   		else if (car.equals(" class 1 truck"))
+   		else if (car.equals("class 1 truck"))
    		{
    			return 3;
    		}
-   		else if (car.equals(" class 2 truck"))
+   		else if (car.equals("class 2 truck"))
    		{
    			return 4;
    		}
