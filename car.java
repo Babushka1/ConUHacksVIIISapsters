@@ -1,11 +1,11 @@
 
 public class Car {
 	
-	final int compact = 0;
-	final int medium = 1;
-	final int fullSize = 2;
-	final int class1 = 3;
-	final int class2 = 4;
+	final int COMPACT = 0;
+	final int MEDIUM = 1;
+	final int FULLSIZE = 2;
+	final int CLASS1 = 3;
+	final int CLASS2 = 4;
 	
 	int [] type = {0, 1, 2, 3, 4};
 	int [] serviceTime = {30, 30, 30, 60, 120};
@@ -13,3 +13,4 @@ public class Car {
 	
 	
 }
+
