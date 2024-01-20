@@ -10,7 +10,7 @@ public class Appointment{
         this.car = new Car(carType(car));
     }
 
-    public Date Conversion(String apptRequestDate){
+    public Date conversion(String apptRequestDate){
 
          int year = Integer.parseInt(apptRequestDate.substring(0, 4));
         int month = Integer.parseInt(apptRequestDate.substring(5, 7));
