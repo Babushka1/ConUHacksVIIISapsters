@@ -7,9 +7,14 @@ public class Car {
 	final int CLASS1 = 3;
 	final int CLASS2 = 4;
 	
-	int [] type = {0, 1, 2, 3, 4};
+	int type;
 	int [] serviceTime = {30, 30, 30, 60, 120};
 	int [] servicePrice = {150, 150, 150, 250, 700};	
+	
+	public Car (int num)
+	{
+		type = num;
+	}
 	
 	
 }
