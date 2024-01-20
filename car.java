@@ -1,4 +1,3 @@
-
 public class Car {
 	
 	final int COMPACT = 0;
@@ -16,6 +15,8 @@ public class Car {
 		type = num;
 	}
 	
+    public String toString(){
+        return ""+type;
+    }
 	
 }
-
