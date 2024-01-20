@@ -12,29 +12,17 @@ public class Main {
         Appointment[] appointments = new Appointment[10000];
 
 
-        /*for (int i=0; i<10000; i++){
+        for (int i=0; i<10000; i++){
             String currentLine = scan.nextLine();
             appointments[i] = new Appointment(currentLine.substring(0,currentLine.indexOf(",")),currentLine.substring(currentLine.indexOf(",")+1,currentLine.lastIndexOf(",")),currentLine.substring(currentLine.lastIndexOf(",")+1));
         }
 
 
         for (int i=0;i<10000;i++){
-            System.out.println(appointments[i]);
-        }*/
+            System.out.println(appointments[i].apptRequestDate+" ||| "+appointments[i].apptDate+" ||| Type "+appointments[i].car);
+        }
 
-        Calendar calendar = Calendar.getInstance();
-
-        calendar.set(2023, 0, 8, 0, 0, 0);
-
-        Date date1 = calendar.getTime();
-
-        calendar.set(2024, 0, 20, 0, 0, 0);
-
-        Date date2 = calendar.getTime();
-
-        System.out.println(date1);
-        System.out.println(date2);
-
+        
 
         scan.close();
     }
