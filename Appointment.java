@@ -59,6 +59,33 @@ public class Appointment{
        }
    }
 
+       private int convertDays(Date date)
+   {
+	   if (date.getMonth() == 9)
+	   {
+		   return date.getDay() - 1;
+	   }
+	   else 
+	   {
+		   return date.getDate() - 1 + 31;
+	   }
+   }
+   	
+   private int convertMinutes(Date date)  
+   {
+	   return (date.getHours() - 7) * 60 + date.getMinutes();
+   }
+   
+   public boolean isAvailable()
+   {
+	   for (int i = 5; i <= 9; i++)
+	   {
+		   return Schedule.baySchedule[convertDays(apptDate)][i].isEmpty(convertMinutes(apptDate), car.serviceTime[car.getType()]);
+	   }
+	   
+	   return Schedule.baySchedule[convertDays(apptDate)][car.getType()].isEmpty(convertMinutes(apptDate), car.serviceTime[car.getType()]);
+   }
+
     public String toString(){
         return ("APPOINTMENREQUESTDATE: "+apptRequestDate+"\nAPPOINTMENTDATE: "+apptDate+"\nCAR: "+car+"\n------------------------------------");
     }
