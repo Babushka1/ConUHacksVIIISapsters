@@ -1,9 +1,9 @@
 import java.util.Calendar;
 import java.util.Date;
 public class Appointment{
-    public Date apptRequestDate; //MAKE PRIVATE!
-    public Date apptDate;
-    public Car car;
+    private Date apptRequestDate; //MAKE PRIVATE!
+    private Date apptDate;
+    private Car car;
   
     public Appointment(String apptRequestDate, String apptDate, String car){
         this.apptRequestDate = conversion(apptRequestDate);
@@ -12,20 +12,20 @@ public class Appointment{
     }
 
     public Date conversion(String apptRequestDate){
-        int slash1 = apptRequestDate.indexOf('/');
-        int slash2 = apptRequestDate.lastIndexOf('/');
+        int slash1 = apptRequestDate.indexOf('-');
+        int slash2 = apptRequestDate.lastIndexOf('-');
         int space = apptRequestDate.indexOf(' ');
         int colon = apptRequestDate.indexOf(':');
         
-        int month = Integer.parseInt(apptRequestDate.substring(0, slash1));
-        int day = Integer.parseInt(apptRequestDate.substring(slash1+1, slash2));
-        int year = Integer.parseInt(apptRequestDate.substring(slash2+1, space));
+        int year = Integer.parseInt(apptRequestDate.substring(0, slash1));
+        int month = Integer.parseInt(apptRequestDate.substring(slash1+1, slash2))-1;
+        int day = Integer.parseInt(apptRequestDate.substring(slash2+1, space));
         int hour = Integer.parseInt(apptRequestDate.substring(space+1 , colon));
         int min = Integer.parseInt(apptRequestDate.substring(colon+1));
         
         Calendar calendar = Calendar.getInstance();
 
-        calendar.set(year ,month ,day,hour,min);
+        calendar.set(year ,month ,day,hour,min,0);
 
         Date date1 = calendar.getTime();
 
@@ -61,5 +61,9 @@ public class Appointment{
 
     public String toString(){
         return ("APPOINTMENREQUESTDATE: "+apptRequestDate+"\nAPPOINTMENTDATE: "+apptDate+"\nCAR: "+car+"\n------------------------------------");
+    }
+
+    public Date getApptRequestDate(){
+        return apptRequestDate;
     }
 }
