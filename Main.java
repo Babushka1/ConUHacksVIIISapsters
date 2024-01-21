@@ -5,7 +5,29 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Main {
+    public static Bay [][] baySchedule = new Bay[61][10];
+    public static int revenue = 0;
+    public static int lostRevenue = 0;
+    public static int total=0;
     public static void main(String[] args) throws FileNotFoundException {
+
+       
+        
+        for (int i = 0; i < baySchedule.length; i++)
+		{
+			for (int j = 0; j < baySchedule[i].length; j++)
+			if (j > 4)
+			{
+				baySchedule [i][j] = new Bay(5);
+			}
+			else
+			{
+				baySchedule[i][j] = new Bay(j);
+			}
+		}
+    
+
+
         File file = new  File(System.getProperty("user.dir")+"\\Desktop\\SAP\\datafile.csv");
         Scanner scan = new Scanner(file);
 
@@ -27,11 +49,38 @@ public class Main {
         
         quickSort(appointments, 0, lines-1);
 
-        for (int i=0;i<lines;i++){
-            System.out.println(appointments[i].getApptRequestDate());
+
+        for (int i=0;i<appointments.length;i++){
+            int availableBay = appointments[i].isAvailable();
+            if(availableBay!=-1){
+                appointments[i].bookAppt(availableBay);
+            }
+            else {lostRevenue+=Car.servicePrice[appointments[i].getCarType()];}
         }
 
-        //scan.close();
+        //System.out.println(appointments[0].isAvailable());
+
+
+
+        System.out.println(revenue);
+        System.out.println(lostRevenue);
+
+
+
+        /*for(int i=0;i<10000;i++){
+            total+=Car.servicePrice[appointments[i].getCarType()];
+        }
+        System.out.println(total);
+        System.out.println(appointments.length);*/
+
+
+
+
+        /*for (int i=0;i<lines;i++){
+            System.out.println(appointments[i].getApptRequestDate());
+        }*/
+
+        scan.close();
     }
     static void swap(Appointment[] array, int i, int j)
     {
