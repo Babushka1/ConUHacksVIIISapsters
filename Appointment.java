@@ -94,6 +94,12 @@ public class Appointment{
 		   return -1;
 	   }
    }
+	
+   public void bookAppt(int num)
+   {
+	   Main.baySchedule[convertDays(apptDate)][num].scheduleAppt(convertMinutes(apptDate), car.serviceTime[car.getType()]);
+   }
+	
 
     public String toString(){
         return ("APPOINTMENREQUESTDATE: "+apptRequestDate+"\nAPPOINTMENTDATE: "+apptDate+"\nCAR: "+car+"\n------------------------------------");
