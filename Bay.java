@@ -17,7 +17,7 @@ public class Bay {
 	{
 		for (int i = startTime; i < serviceTime; i++)
 		{
-			if (startTime + serviceTime > 720)
+			if (startTime + serviceTime >= 720)
 			{
 				break;
 			}
