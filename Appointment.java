@@ -61,13 +61,13 @@ public class Appointment{
 
        private int convertDays(Date date)
    {
-	   if (date.getMonth() == 9)
+	   if (date.getDate() == 9)
 	   {
-		   return date.getDay() - 1;
+		   return date.getDate() - 1;
 	   }
 	   else 
 	   {
-		   return date.getDate() - 1 + 31;
+		   return date.getDate() - 1 + 30;
 	   }
    }
    	
@@ -80,10 +80,10 @@ public class Appointment{
    {
 	   for (int i = 5; i <= 9; i++)
 	   {
-		   return Schedule.baySchedule[convertDays(apptDate)][i].isEmpty(convertMinutes(apptDate), car.serviceTime[car.getType()]);
+		   if (Main.baySchedule[convertDays(apptDate)][i].isEmpty(convertMinutes(apptDate), car.serviceTime[car.getType()])) return true;
 	   }
 	   
-	   return Schedule.baySchedule[convertDays(apptDate)][car.getType()].isEmpty(convertMinutes(apptDate), car.serviceTime[car.getType()]);
+	   return Main.baySchedule[convertDays(apptDate)][car.getType()].isEmpty(convertMinutes(apptDate), car.serviceTime[car.getType()]);
    }
 
     public String toString(){
