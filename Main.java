@@ -13,7 +13,7 @@ public class Main {
         Bay[] bays = new Bay[10];
         
         for (int i=0; i<bays.length; i++){
-            if (i>4) bays[i]=new Bay(0);
+            if (i>4) bays[i]=new Bay(5);
 
             else bays[i]= new Bay(i);
         }
