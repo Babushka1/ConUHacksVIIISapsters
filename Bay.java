@@ -1,6 +1,6 @@
 
 public class Bay {
-	
+	private int type;
 	final int COMPACT = 0;
 	final int MEDIUM = 1;
 	final int FULLSIZE = 2;
@@ -9,6 +9,9 @@ public class Bay {
 	final int WILD = 5;
 	int [] schedule = new int [720];
 
+    public Bay(int type){
+        this.type=type;
+    }
 
 	public boolean isEmpty(int startTime, int serviceTime)
 	{
@@ -37,11 +40,5 @@ public class Bay {
 			schedule [i] = 1;
 		}
 	}
-
-		public int convertMinutes(Date date)
-	{	
-		return date.getHours() - 7 * 60 + date.getMinutes();
-	}
-	
 	
 }
