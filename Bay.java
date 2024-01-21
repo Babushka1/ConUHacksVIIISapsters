@@ -40,20 +40,5 @@ public class Bay {
 			schedule [i] = 1;
 		}
 	}
-
-		
-	public int serviceTime(Car car)
-	{
-		switch (car.getType())
-		{
-		case 0: return 30;
-		case 1: return 30;
-		case 2: return 30;
-		case 3: return 60;
-		case 4: return 120;
-		}
-		return -1;
-		
-	}
 	
 }
