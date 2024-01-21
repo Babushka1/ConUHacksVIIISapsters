@@ -37,5 +37,11 @@ public class Bay {
 			schedule [i] = 1;
 		}
 	}
+
+		public int convertMinutes(Date date)
+	{	
+		return date.getHours() - 7 * 60 + date.getMinutes();
+	}
+	
 	
 }
