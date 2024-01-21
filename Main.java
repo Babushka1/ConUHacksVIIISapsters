@@ -1,24 +1,19 @@
 import java.io.File;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
-import java.io.NoSuchElementException;
 import java.util.Calendar;
 import java.util.Date;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new  File("C:\\Users\\jovro\\Desktop\\SAP\\unsorteddatafile.csv");
+        File file = new  File(System.getProperty("user.dir")+"\\Desktop\\SAP\\datafile.csv");
         Scanner scan = new Scanner(file);
 
         int lines = 0;
-        try {
-            while (true) {
+            while (scan.hasNextLine()) {
                 scan.nextLine();
                 lines++;
             }
-        } catch (java.util.NoSuchElementException e){
-            
-        }
 
         scan = new Scanner(file);
 
