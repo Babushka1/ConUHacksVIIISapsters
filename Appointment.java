@@ -98,6 +98,7 @@ public class Appointment{
    public void bookAppt(int num)
    {
 	   Main.baySchedule[convertDays(apptDate)][num].scheduleAppt(convertMinutes(apptDate), car.serviceTime[car.getType()]);
+       Main.revenue += Car.servicePrice[car.getType()];
    }
 	
 
@@ -107,5 +108,9 @@ public class Appointment{
 
     public Date getApptRequestDate(){
         return apptRequestDate;
+    }
+
+    public int getCarType(){
+        return car.getType();
     }
 }
