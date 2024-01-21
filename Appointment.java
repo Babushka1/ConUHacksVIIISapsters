@@ -76,14 +76,23 @@ public class Appointment{
 	   return (date.getHours() - 7) * 60 + date.getMinutes();
    }
    
-   public boolean isAvailable()
+   public int isAvailable()
    {
 	   for (int i = 5; i <= 9; i++)
 	   {
-		   if (Main.baySchedule[convertDays(apptDate)][i].isEmpty(convertMinutes(apptDate), car.serviceTime[car.getType()])) return true;
+		   if((Main.baySchedule[convertDays(apptDate)][i].isEmpty(convertMinutes(apptDate), car.serviceTime[car.getType()])))
+		   {
+			  return i;
+		   }
 	   }
-	   
-	   return Main.baySchedule[convertDays(apptDate)][car.getType()].isEmpty(convertMinutes(apptDate), car.serviceTime[car.getType()]);
+	   if(Main.baySchedule[convertDays(apptDate)][car.getType()].isEmpty(convertMinutes(apptDate), car.serviceTime[car.getType()]))
+	   {
+		   return car.getType();
+	   }
+	   else
+	   {
+		   return -1;
+	   }
    }
 
     public String toString(){
